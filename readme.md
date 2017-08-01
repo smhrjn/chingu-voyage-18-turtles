@@ -32,6 +32,7 @@ Real time chap app with following features:
 1. Angular 4.0 and its dependencies
 1. Bootstrap 4.0
 1. Express
+1. Firebase and Angularfire2
 
 ## Dev Dependencies
 
