@@ -1,6 +1,6 @@
 # Chingu-Voyage (Team Turtles 18)
 
-## ngChat [live version](www.vochat.herokuapp.com)
+## ngChat [live version](http://www.vochat.surge.sh)
 
 ## Contributors
 
@@ -23,8 +23,8 @@ Real time chap app with following features:
 ## Stack
 
 * Angular 4
-* Nodejs
-* (Nodejs + Express + Mongodb + Websocket.io) or Firebase
+* Nodejs and Express
+* (Mongodb + Websocket.io) or Firebase
 * Bootstrap 4.0
 
 ## Dependencies
@@ -32,6 +32,7 @@ Real time chap app with following features:
 1. Angular 4.0 and its dependencies
 1. Bootstrap 4.0
 1. Express
+1. Firebase and Angularfire2
 
 ## Dev Dependencies
 
