@@ -1,6 +1,6 @@
 # Chingu-Voyage (Team Turtles 18)
 
-## ngChat [live version](www.vochat.surge.sh)
+## ngChat [live version](http://www.vochat.surge.sh)
 
 ## Contributors
 
