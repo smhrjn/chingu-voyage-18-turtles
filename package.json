@@ -4,13 +4,16 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "runserver": "cd server && npm run dev",
+    "serve": "ng serve",
+    "start": "run-p runserver serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "surge": "npm run postinstall && cd dist && surge",
-    "postinstall": "ng build --aot --target=production"
+    "surge": "npm run buildprod && cd dist && surge",
+    "buildprod": "ng build --aot --target=production",
+    "postinstall": "cd server && npm install"
   },
   "private": true,
   "dependencies": {
@@ -25,12 +28,11 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angularfire2": "^4.0.0-rc.1",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
     "express": "^4.15.3",
-    "firebase": "^4.2.0",
     "rxjs": "^5.4.1",
+    "socket.io": "^2.0.3",
     "typescript": "~2.3.3",
     "zone.js": "^0.8.14"
   },
@@ -48,6 +50,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.0.2",
     "protractor": "~5.1.2",
     "surge": "^0.19.0",
     "ts-node": "~3.0.4",

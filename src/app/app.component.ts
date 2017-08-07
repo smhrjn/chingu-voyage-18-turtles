@@ -1,15 +1,32 @@
-import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { MessagingService } from './messaging.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
-  items: FirebaseListObservable<any[]>;
-  constructor(db: AngularFireDatabase) {
-    this.items = db.list('/firstCollection');
+  messages = [];
+  connection;
+  message = '';
+
+  constructor(private messaging: MessagingService) {}
+
+  sendMessage() {
+    this.messaging.sendMessage(this.message);
+    this.message = '';
+  }
+
+  ngOnInit() {
+    this.connection = this.messaging.getMessages().subscribe(message => {
+      this.messages.push(message);
+    });
+  }
+
+  ngOnDestroy() {
+    this.connection.unsubscribe();
   }
 }

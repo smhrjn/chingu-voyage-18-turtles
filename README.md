@@ -24,7 +24,7 @@ Real time chap app with following features:
 
 * Angular 4
 * Nodejs and Express
-* (Mongodb + Websocket.io) or Firebase
+* Mongodb + Socket.io
 * Bootstrap 4.0
 
 ## Dependencies
@@ -32,7 +32,8 @@ Real time chap app with following features:
 1. Angular 4.0 and its dependencies
 1. Bootstrap 4.0
 1. Express
-1. Firebase and Angularfire2
+1. Mongodb
+1. Socket.io
 
 ## Dev Dependencies
 
