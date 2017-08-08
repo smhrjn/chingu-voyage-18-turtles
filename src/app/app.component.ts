@@ -8,25 +8,32 @@ import { MessagingService } from './messaging.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'app';
+  title = 'ng-chat';
   messages = [];
   connection;
-  message = '';
+  message;
+  initialMessages;
 
   constructor(private messaging: MessagingService) {}
 
   sendMessage() {
-    this.messaging.sendMessage(this.message);
-    this.message = '';
+    if (this.message !== '') {
+      this.messaging.sendMessage(this.message);
+      this.message = '';
+    }
   }
 
   ngOnInit() {
-    this.connection = this.messaging.getMessages().subscribe(message => {
+    this.initialMessages = this.messaging.getMessages().subscribe(data => {
+      data.forEach(message => this.messages.push(message));
+    });
+    this.connection = this.messaging.getMessage().subscribe(message => {
       this.messages.push(message);
     });
   }
 
   ngOnDestroy() {
     this.connection.unsubscribe();
+    this.initialMessages.unsubscribe();
   }
 }
