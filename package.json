@@ -12,6 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "surge": "npm run buildprod && cd dist && surge --domain vochat.surge.sh",
+    "heroku": "git subtree push --prefix server heroku master",
     "buildprod": "ng build --aot --target=production",
     "postinstall": "cd server && npm install"
   },
@@ -28,6 +29,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "auth0-js": "^8.8.0",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
     "express": "^4.15.3",
