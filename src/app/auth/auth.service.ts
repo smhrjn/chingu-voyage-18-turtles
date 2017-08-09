@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 
@@ -11,12 +11,11 @@ export class AuthService {
     domain: 'vochat.eu.auth0.com',
     responseType: 'token id_token',
     audience: 'https://vochat.eu.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200',
+    redirectUri: 'http://localhost:4200/callback',
     scope: 'openid'
   });
 
-  // constructor(public router: Router) {}
-  constructor() {}
+  constructor(public router: Router) {}
 
   public login(): void {
     this.auth0.authorize();
@@ -27,9 +26,9 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       } else if (err) {
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         console.log(err);
       }
     });
@@ -49,7 +48,7 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // Go back to the home route
-    // this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {

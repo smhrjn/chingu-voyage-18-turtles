@@ -12,10 +12,6 @@
 
 <hr>
 
-<app-contacts></app-contacts>
-
-<hr>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -23,8 +19,14 @@
 
       <button
         class="btn btn-primary btn-margin"
-        routerLink="/">
+        routerLink="/" routerLinkActive="active">
           Home
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        routerLink="/contacts" routerLinkActive="active">
+          Contacts
       </button>
 
       <button
@@ -44,7 +46,9 @@
     </div>
   </div>
 </nav>
-<!--
+
+<hr>
+
 <main class="container">
   <router-outlet></router-outlet>
-</main> -->
+</main>
