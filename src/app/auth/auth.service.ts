@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { isDevMode } from '@angular/core';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 
@@ -11,7 +12,7 @@ export class AuthService {
     domain: 'vochat.eu.auth0.com',
     responseType: 'token id_token',
     audience: 'https://vochat.eu.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: isDevMode() ? 'http://localhost:4200' : 'http://vochat.surge.sh',
     scope: 'openid'
   });
 
