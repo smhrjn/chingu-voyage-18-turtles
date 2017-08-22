@@ -1,36 +1,82 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
-import * as auth0 from 'auth0-js';
+// import * as auth0 from 'auth0-js';
+import auth0Lock from 'auth0-lock';
 
 @Injectable()
 export class AuthService {
 
-  auth0 = new auth0.WebAuth({
-    clientID: 'Nla3arENG6y0bBX8F28QLsb0dNtyK00j',
-    domain: 'vochat.eu.auth0.com',
-    responseType: 'token id_token',
-    audience: 'https://vochat.eu.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+  lock = new auth0Lock('Nla3arENG6y0bBX8F28QLsb0dNtyK00j', 'vochat.eu.auth0.com', {
+    oidcConformant: true,
+    autoclose: true,
+    auth: {
+      responseType: 'token id_token',
+      audience: 'https://vochat.eu.auth0.com/userinfo',
+      redirectUri: 'http://localhost:4200/',
+      params: {
+        scope: 'openid profile email'
+      }
+    }
   });
+
+  userProfile: any = { name : 'User' };
 
   constructor(public router: Router) {}
 
   public login(): void {
-    this.auth0.authorize();
+    this.lock.show();
   }
 
   public handleAuthentication(): void {
-    this.auth0.parseHash((err, authResult) => {
+    this.lock.on('authenticated', (authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
         this.setSession(authResult);
+        this.getProfile(() => {});
         this.router.navigate(['/']);
-      } else if (err) {
-        this.router.navigate(['/']);
-        console.log(err);
       }
+    });
+    this.lock.on('authorization_error', (err) => {
+      this.router.navigate(['/']);
+      console.log(err);
+      alert(`Error: ${err.error}. Check the console for further details.`);
+    });
+  }
+
+/*   // Call this method in app.component.ts
+  // if using hash-based routing
+  public handleAuthenticationWithHash(): void {
+    this
+      .router
+      .events
+      .filter(event => event instanceof NavigationStart)
+      .filter((event: NavigationStart) => (/access_token|id_token|error/).test(event.url))
+      .subscribe(() => {
+        this.lock.resumeAuth(window.location.hash, (err, authResult) => {
+          if (err) {
+            this.router.navigate(['/']);
+            console.log(err);
+            alert(`Error: ${err.error}. Check the console for further details.`);
+            return;
+          }
+          this.setSession(authResult);
+          this.router.navigate(['/']);
+        });
+    });
+  } */
+
+  public getProfile(cb): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
+
+    const self = this;
+    this.lock.getUserInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
     });
   }
 

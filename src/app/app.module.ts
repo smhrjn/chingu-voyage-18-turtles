@@ -14,16 +14,16 @@ import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   { path: 'contacts', component: ContactsComponent },
-  { path: 'callback',      component: CallbackComponent },
+  { path: 'callback', component: CallbackComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
   //   data: { title: 'Heroes List' }
   // },
-  { path: '',
-    redirectTo: '/contacts',
-    pathMatch: 'full'
-  }
+  // { path: '',
+  //   redirectTo: '/contacts',
+  //   pathMatch: 'full'
+  // }
   // { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      // { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
     FormsModule,

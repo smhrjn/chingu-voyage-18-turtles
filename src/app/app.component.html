@@ -1,18 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <div *ngFor="let message of messages" class="card bg-success text-white">
-    {{message.text}}
-  </div>
-  <hr>
-  <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
-</div>
-
-<hr>
-
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">{{ profile.name }}</a>
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Auth0 - Angular</a>
@@ -32,7 +19,7 @@
       <button
         class="btn btn-primary btn-margin"
         *ngIf="!auth.isAuthenticated()"
-        (click)="auth.login()">
+        (click)="login()">
           Log In
       </button>
 
@@ -49,14 +36,22 @@
 
 <hr>
 
+<div class="container">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <div *ngFor="let message of messages" class="card">
+    {{message.text}}
+  </div>
+  <hr>
+  <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
+</div>
+
+<hr>
+
 <main class="container">
   <router-outlet></router-outlet>
 </main>
-<header>
-  <nav class="navbar fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">CHAT APP Navigation will go here</a>
-  </nav>
-</header>
 
 <body>
   <div class="container">
