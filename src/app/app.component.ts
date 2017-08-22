@@ -3,10 +3,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { MessagingService } from './messaging.service';
 
+import { ProfileComponent } from './profile/profile.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  
 })
 
 export class AppComponent implements OnInit, OnDestroy {

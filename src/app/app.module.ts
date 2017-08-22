@@ -10,6 +10,7 @@ import { MessagingService } from './messaging.service';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CallbackComponent } from './callback/callback/callback.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   { path: 'contacts', component: ContactsComponent },
@@ -29,8 +30,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CallbackComponent,
     ContactsComponent,
-    CallbackComponent
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(
