@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { isDevMode } from '@angular/core';
 import 'rxjs/add/operator/filter';
 // import * as auth0 from 'auth0-js';
 import auth0Lock from 'auth0-lock';
