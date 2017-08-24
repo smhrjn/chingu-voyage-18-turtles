@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
 import { MessagingService } from './messaging.service';
-
-import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,6 @@ export class AppComponent implements OnInit, OnDestroy {
   connection;
   message;
   initialMessages;
-  profile: any = {};
 
   constructor(private messaging: MessagingService, public auth: AuthService) {
     auth.handleAuthentication();
@@ -32,13 +30,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   login() {
     this.auth.login();
-    // if (this.auth.userProfile) {
-    //   this.profile = this.auth.userProfile;
-    // } else {
-    //   this.auth.getProfile((err, profile) => {
-    //     this.profile = profile;
-    //   });
-    // }
   }
 
   ngOnInit() {
@@ -48,7 +39,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.connection = this.messaging.getMessage().subscribe(message => {
       this.messages.push(message);
     });
-    this.profile = this.auth.userProfile;
   }
 
   ngOnDestroy() {

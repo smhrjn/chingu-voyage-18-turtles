@@ -11,10 +11,12 @@ import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CallbackComponent } from './callback/callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'callback', component: CallbackComponent },
+  { path: 'profile', component: ProfileComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     AppComponent,
     CallbackComponent,
     ContactsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(

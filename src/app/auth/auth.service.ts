@@ -21,7 +21,7 @@ export class AuthService {
     }
   });
 
-  userProfile: any = { name : 'User' };
+  userProfile: any;
 
   constructor(public router: Router) {}
 
@@ -33,8 +33,6 @@ export class AuthService {
     this.lock.on('authenticated', (authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        this.getProfile(() => {});
-        this.router.navigate(['/']);
       }
     });
     this.lock.on('authorization_error', (err) => {
@@ -86,13 +84,16 @@ export class AuthService {
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('profile', JSON.stringify(authResult.idTokenPayload));
     localStorage.setItem('expires_at', expiresAt);
+    this.router.navigate(['/profile']);
   }
 
   public logout(): void {
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
+    localStorage.removeItem('profile');
     localStorage.removeItem('expires_at');
     // Go back to the home route
     this.router.navigate(['/']);
