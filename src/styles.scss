@@ -10,10 +10,6 @@ h5 {
   color: #FF5C5C;
 }
 
-text {
-  color: #2E3C40;
-  font-family: 'Raleway', sans-serif;
-}
 @font-face {
   font-family: 'Raleway', sans-serif;
 }
@@ -30,7 +26,8 @@ text {
 // Note: currently the media queries won't affect the placeholder images as width & height is pre determined in html
 @media (min-width: 576px) {
   .chat-messages,
-  .contacts-list {
+  .contacts-list,
+  .profile-text {
     font-size: 1.3em;
   }
 
@@ -42,7 +39,8 @@ text {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .chat-messages,
-  .contacts-list {
+  .contacts-list,
+  .profile-text {
     font-size: 1.4em;
   }
 
@@ -54,7 +52,8 @@ text {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .chat-messages,
-  .contacts-list {
+  .contacts-list,
+  .profile-text {
     font-size: 1.5em;
   }
 
@@ -66,7 +65,8 @@ text {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .chat-messages,
-  .contacts-list {
+  .contacts-list,
+  .profile-text {
     font-size: 1.6em;
   }
 
