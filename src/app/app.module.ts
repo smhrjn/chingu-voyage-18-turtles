@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CallbackComponent } from './callback/callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ChatComponent } from './chat/chat.component';
 
 const appRoutes: Routes = [
   { path: 'contacts', component: ContactsComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     CallbackComponent,
     ContactsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent
   ],
   imports: [
     RouterModule.forRoot(

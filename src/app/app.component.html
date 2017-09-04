@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="#">{{ profile.name }}</a>
-  <div class="container-fluid">
-    <div class="navbar-header">
+  <div class="container-fluid ">
+    <div class="navbar-header " >
       <a class="navbar-brand" href="#">Auth0 - Angular</a>
 
       <button
@@ -36,13 +36,13 @@
 
 <hr>
 
-<div class="container">
+<div class="container" style="background-color: #e4f5fd;">
   <h1>
     Welcome to {{title}}!
   </h1>
-  <div *ngFor="let message of messages" class="card">
+  <!-- <div *ngFor="let message of messages" class="card">
     {{message.text}}
-  </div>
+  </div> -->
   <hr>
   <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
 </div>
@@ -57,9 +57,12 @@
   <div class="container">
     <div class="profileinfo">
       <app-profile></app-profile>
+      <!-- <app-contacts></app-contacts> -->
+      <app-chat></app-chat>
     </div>
   </div>
-  <app-contacts></app-contacts>
+
+
 </body>
 
 <footer></footer>
