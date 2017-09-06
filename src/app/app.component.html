@@ -34,10 +34,6 @@
   </div>
 </nav>
 
-<main class="container">
-  <router-outlet></router-outlet>
-</main>
-
 <div class="container" style="background-color: #e4f5fd;">
   <h1>
     Welcome to {{title}}!
@@ -49,25 +45,18 @@
   <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
 </div>
 
-<<<<<<< HEAD
-=======
 <hr>
 
 <main class="container">
   <router-outlet></router-outlet>
 </main>
 
-<body>
-  <div class="container">
-    <div class="profileinfo">
-      <app-profile></app-profile>
-      <!-- <app-contacts></app-contacts> -->
-      <app-chat></app-chat>
-    </div>
+<div class="container">
+  <div class="profileinfo">
+    <app-profile></app-profile>
+    <!-- <app-contacts></app-contacts> -->
+    <app-chat></app-chat>
   </div>
+</div>
 
-
-</body>
-
->>>>>>> master
 <footer></footer>

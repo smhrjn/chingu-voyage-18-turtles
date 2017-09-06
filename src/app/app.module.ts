@@ -35,11 +35,7 @@ const appRoutes: Routes = [
     CallbackComponent,
     ContactsComponent,
     ProfileComponent,
-<<<<<<< HEAD
-    FooterComponent
-=======
     ChatComponent
->>>>>>> master
   ],
   imports: [
     RouterModule.forRoot(

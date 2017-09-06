@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { AuthService } from './auth/auth.service';
 import { MessagingService } from './messaging.service';
-import { FooterComponent } from './footer/footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
