@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">vochat</a>
-  <div class="container-fluid">
-    <div class="navbar-header">
+<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">{{ profile.name }}</a>
+  <div class="container-fluid ">
+    <div class="navbar-header " >
       <a class="navbar-brand" href="#">Auth0 - Angular</a>
 
       <button
@@ -38,15 +38,36 @@
   <router-outlet></router-outlet>
 </main>
 
-<div class="container">
+<div class="container" style="background-color: #e4f5fd;">
   <h1>
     Welcome to {{title}}!
   </h1>
-  <div *ngFor="let message of messages" class="card">
+  <!-- <div *ngFor="let message of messages" class="card">
     {{message.text}}
-  </div>
+  </div> -->
   <hr>
   <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
 </div>
 
+<<<<<<< HEAD
+=======
+<hr>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<body>
+  <div class="container">
+    <div class="profileinfo">
+      <app-profile></app-profile>
+      <!-- <app-contacts></app-contacts> -->
+      <app-chat></app-chat>
+    </div>
+  </div>
+
+
+</body>
+
+>>>>>>> master
 <footer></footer>
