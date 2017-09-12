@@ -13,13 +13,16 @@ h5 {
 @font-face {
   font-family: 'Raleway', sans-serif;
 }
-//.media makes contacts responsive
 
-.container,
-.media {
+.images{
+  border-radius: 60%;
+  border: 1px solid #ddd;
+  padding: 0.2em;
   max-width: 100%;
   height: auto;
 }
+
+
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
 // Small devices (landscape phones, 576px and up)
@@ -30,11 +33,6 @@ h5 {
   .profile-text {
     font-size: 1.3em;
   }
-
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -42,11 +40,6 @@ h5 {
   .contacts-list,
   .profile-text {
     font-size: 1.4em;
-  }
-
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
   }
 }
 // Large devices (desktops, 992px and up)
@@ -56,11 +49,6 @@ h5 {
   .profile-text {
     font-size: 1.5em;
   }
-
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
@@ -68,11 +56,5 @@ h5 {
   .contacts-list,
   .profile-text {
     font-size: 1.6em;
-  }
-
-  .img-fluid {
-    // max-width: 100%;
-    width: 100% \9;
-    height: auto;
   }
 }
