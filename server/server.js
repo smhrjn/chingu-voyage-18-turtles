@@ -53,10 +53,6 @@ io.on('connection', socket => {
   });
 });
 
-// http.listen(5000, () => {
-//   console.log('Server for socket started on port 5000');
-// });
-
 http.listen(port, err => {
   if (err) {
     console.log(err);

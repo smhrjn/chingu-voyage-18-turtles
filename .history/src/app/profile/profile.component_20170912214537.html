@@ -1,0 +1,17 @@
+<div class="profile-text text-center">
+  <!-- user image goes here -->
+  <img src="https://unsplash.it/165/165?image=501" class="img-thumbnail img-fluid d-flex mr-3" alt="man from behind">
+  <h5>Johnny Blaze</h5>
+  <!-- username -->
+  <p>
+    <!-- user info -->
+    About me. This is the users profile. in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+    faucibus.
+  </p>
+  <!-- <div *ngFor="let message of messages" class="card">
+    {{message.text}}
+  </div> -->
+  <hr>
+  <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
+
+</div>
