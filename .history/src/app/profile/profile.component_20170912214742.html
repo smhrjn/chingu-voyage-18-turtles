@@ -1,0 +1,16 @@
+<div class="profile-text text-center">
+  <!-- user image goes here -->
+  <h5>Profile Page</h5>
+  <!-- username -->
+  <!-- user info -->
+  <img src="https://unsplash.it/165/165?image=501" class="img-thumbnail img-fluid d-flex mr-3" alt="man from behind">
+  <p>
+    Show Contacts and some user info Here // maybe new component for contacts
+  </p>
+  <!-- <div *ngFor="let message of messages" class="card">
+    {{message.text}}
+  </div> -->
+  <hr>
+  <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
+
+</div>
