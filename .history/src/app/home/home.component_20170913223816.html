@@ -1,0 +1,11 @@
+<div *ngIf="!this.authenticated">
+  This shows if not authenticated!!!
+  <hr>
+  We also need loading animation while loggin in!
+</div>
+<hr>
+<div *ngIf="this.authenticated">This shows if authenticated!!!</div>
+<div class="loading">
+    <img src="assets/loading.svg" alt="loading">
+    <img src="assets/open-iconic-master/svg/droplet.svg" alt="Droplet">
+</div>
