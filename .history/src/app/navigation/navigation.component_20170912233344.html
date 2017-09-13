@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="#">{{ profile.name }}</a> -->
+    <div class="container-fluid ">
+      <div class="navbar-header " >
+        <a class="navbar-brand" href="#">Nice Logo :D</a>
+
+        <button
+          *ngIf="!this.auth.isAuthenticated()"
+          class="btn btn-primary btn-margin"
+          routerLink="/" routerLinkActive="active">
+            Home
+        </button>
+
+        <button
+          *ngIf="this.auth.isAuthenticated()"
+          class="btn btn-primary btn-margin"
+          routerLink="/profile" routerLinkActive="active">
+            Profile
+        </button>
+
+        <button
+          *ngIf="!auth.isAuthenticated()"
+          class="btn btn-primary btn-margin"
+          (click)="login()">
+            Log In
+        </button>
+
+        <button
+          *ngIf="auth.isAuthenticated()"
+          class="btn btn-primary btn-margin"
+          (click)="auth.logout()">
+            Log Out
+        </button>
+
+      </div>
+    </div>
+  </nav>

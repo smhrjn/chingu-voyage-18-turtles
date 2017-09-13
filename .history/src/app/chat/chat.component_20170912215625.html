@@ -1,0 +1,7 @@
+<div class="message-group">
+  <div *ngFor="let message of messages" class="card">
+    {{message.text}}
+  </div>
+  <hr>
+  <input [(ngModel)]="message" (keyup.enter)="sendMessage()"/><button (click)="sendMessage()">Press Enter to Send</button>
+</div>

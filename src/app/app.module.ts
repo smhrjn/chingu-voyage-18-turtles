@@ -9,13 +9,16 @@ import { MessagingService } from './messaging.service';
 
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { CallbackComponent } from './callback/callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const appRoutes: Routes = [
-  { path: 'contacts', component: ContactsComponent },
-  { path: 'callback', component: CallbackComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: '', component: HomeComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -31,10 +34,12 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CallbackComponent,
     ContactsComponent,
     ProfileComponent,
-    ChatComponent
+    ChatComponent,
+    HomeComponent,
+    FooterComponent,
+    NavigationComponent
   ],
   imports: [
     RouterModule.forRoot(
