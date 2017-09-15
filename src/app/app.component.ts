@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './auth.service';
 import { FooterComponent } from './footer/footer.component';
 
 @Component({

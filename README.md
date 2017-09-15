@@ -38,3 +38,9 @@ Real time chap app with following features:
 ## Dev Dependencies
 
 1. Angular CLI and its dependencies
+
+## User Schema
+
+![user scheme][user]
+
+[user]: ./references/user-profile-schema.png "user-scheme"

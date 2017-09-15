@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,15 +7,14 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
   authenticated: Boolean = false;
   constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
     if (this.auth.isAuthenticated()) {
-      this.authenticated = true;
-      // this.router.navigate(['/profile']);
+      this.router.navigate(['/contacts']);
     }
   }
-
 }

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './auth.service';
 import { MessagingService } from './messaging.service';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'chat', component: ChatComponent },
+  { path: 'contacts', component: ContactsComponent },
   { path: '', component: HomeComponent },
   // {
   //   path: 'heroes',
