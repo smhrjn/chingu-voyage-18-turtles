@@ -88,7 +88,7 @@ export class AuthService {
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('profile', JSON.stringify(authResult.idTokenPayload));
     localStorage.setItem('expires_at', expiresAt);
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/contacts']);
   }
 
   public logout(): void {
