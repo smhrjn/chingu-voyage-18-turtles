@@ -1,47 +1,29 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar">
   <div>
-      <h1>Welcome to {{ title }}!</h1>
+    <h1>Welcome to {{ title }}!</h1>
   </div>
   <!-- <a class="navbar-brand" href="#">{{ profile.name }}</a> -->
   <div class="container-fluid ">
-    <div class="navbar-header " >
-      <a class="navbar-brand" href="#">Nice Logo :D</a>
+    <div class="navbar-header ">
+      <!-- <a class="navbar-brand" href="#">Nice Logo :D</a> -->
 
-      <button
-        *ngIf="!this.auth.isAuthenticated()"
-        class="btn btn-primary btn-margin"
-        routerLink="/" routerLinkActive="active">
-          Home
-      </button>
+      <ul class="nav-container">
+        <li class="nav-menu" *ngIf="!this.auth.isAuthenticated()" routerLink="/" routerLinkActive="active"><a href="#">Home</a></li>
 
-      <button
-        *ngIf="this.auth.isAuthenticated()"
-        class="btn btn-primary btn-margin"
-        routerLink="/profile" routerLinkActive="active">
-          Profile
-      </button>
+        <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/profile" routerLinkActive="active"><a href="#">PROFILE</a></li>
 
-      <button
-        *ngIf="this.auth.isAuthenticated()"
-        class="btn btn-primary btn-margin"
-        routerLink="/contacts" routerLinkActive="active">
-          Contacts
-      </button>
+        <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/contacts" routerLinkActive="active"><a href="#">CONTACTS</a></li>
 
-      <button
-        *ngIf="!auth.isAuthenticated()"
-        class="btn btn-primary btn-margin"
-        (click)="login()">
-          Log In
-      </button>
+        <div class=" buttons nav-menu">
+          <button *ngIf="!auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="login()">
+              Log In
+          </button>
 
-      <button
-        *ngIf="auth.isAuthenticated()"
-        class="btn btn-primary btn-margin"
-        (click)="auth.logout()">
-          Log Out
-      </button>
-
+          <button *ngIf="auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="auth.logout()">
+              Log Out
+          </button>
+        </div>
+      </ul>
     </div>
   </div>
 </nav>

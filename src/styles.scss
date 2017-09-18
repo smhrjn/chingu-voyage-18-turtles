@@ -5,7 +5,7 @@ header {
 }
 
 h4,
-h5 {
+h5,.menu {
   font-family: 'Open Sans', sans-serif;
   color: #FF5C5C;
 }
@@ -27,7 +27,24 @@ h5 {
    padding: 0 0 0 0.031em;
 }
 
+.navbar{
+  display:flex;
+  // border: 1px solid red;
+}
+.nav-container{
+  display: flex;
+  justify-content: center;
+  flex: 0 1 auto;
+  padding: 0.5em 0em;
+}
+.nav-menu{
+  display: inline-flex;
+  padding: 0.5em;
+}
 
+.nav-menu a{
+  margin: 0.7em;
+}
 
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
