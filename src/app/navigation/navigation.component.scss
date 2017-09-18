@@ -1,3 +1,28 @@
 .navbar {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.navbar-header {
   // background-color: #e3f2fd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 50em;
+  margin: auto;
+  padding: 3px;
+}
+
+.nav-container {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 0px;
+}
+
+li:hover {
+  border: 1px solid #888;
+  padding: 3px;
 }

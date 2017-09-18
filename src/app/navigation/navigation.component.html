@@ -1,29 +1,23 @@
+<div class="header-title">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
 <nav class="navbar">
-  <div>
-    <h1>Welcome to {{ title }}!</h1>
-  </div>
   <!-- <a class="navbar-brand" href="#">{{ profile.name }}</a> -->
-  <div class="container-fluid ">
-    <div class="navbar-header ">
-      <!-- <a class="navbar-brand" href="#">Nice Logo :D</a> -->
+  <div class="navbar-header">
+    <!-- <a class="navbar-brand" href="#">Nice Logo :D</a> -->
+    <ul class="nav-container">
+      <li class="nav-menu" *ngIf="!this.auth.isAuthenticated()" routerLink="/" routerLinkActive="active">HOME</li>
+      <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/profile" routerLinkActive="active">PROFILE</li>
+      <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/contacts" routerLinkActive="active">CONTACTS</li>
+    </ul>
 
-      <ul class="nav-container">
-        <li class="nav-menu" *ngIf="!this.auth.isAuthenticated()" routerLink="/" routerLinkActive="active"><a href="#">Home</a></li>
-
-        <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/profile" routerLinkActive="active"><a href="#">PROFILE</a></li>
-
-        <li class="nav-menu" *ngIf="this.auth.isAuthenticated()" routerLink="/contacts" routerLinkActive="active"><a href="#">CONTACTS</a></li>
-
-        <div class=" buttons nav-menu">
-          <button *ngIf="!auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="login()">
-              Log In
-          </button>
-
-          <button *ngIf="auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="auth.logout()">
-              Log Out
-          </button>
-        </div>
-      </ul>
+    <div class="buttons nav-menu">
+      <button *ngIf="!auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="login()">
+          Log In
+      </button>
+      <button *ngIf="auth.isAuthenticated()" class="btn btn-primary btn-margin" (click)="auth.logout()">
+          Log Out
+      </button>
     </div>
   </div>
 </nav>
