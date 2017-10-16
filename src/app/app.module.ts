@@ -14,11 +14,13 @@ import { ChatComponent } from './chat/chat.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'contacts', component: ContactsComponent },
+  { path: 'signup', component: SignUpComponent },
   { path: '', component: HomeComponent },
   // {
   //   path: 'heroes',
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     ChatComponent,
     HomeComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    SignUpComponent
   ],
   imports: [
     RouterModule.forRoot(

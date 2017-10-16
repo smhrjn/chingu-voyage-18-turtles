@@ -1,11 +1,8 @@
 <nav class="navbar navbar-dark bg-dark">
-  <div>
-      <h1>Welcome to {{ title }}!</h1>
-  </div>
   <!-- <a class="navbar-brand" href="#">{{ profile.name }}</a> -->
   <div class="container-fluid ">
     <div class="navbar-header " >
-      <a class="navbar-brand" href="#">Nice Logo :D</a>
+      <a class="navbar-brand" href="#">{{ title }}Nice Logo :D</a>
 
       <button
         *ngIf="!this.auth.isAuthenticated()"
