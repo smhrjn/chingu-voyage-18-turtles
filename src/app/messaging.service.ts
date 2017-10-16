@@ -35,8 +35,13 @@ export class MessagingService {
     return observable;
   }
 
-   getMessages() {
+  getMessages() {
     console.log('Getting messages');
     return this.http.get(this.url + '/messages').map(data => _.values(data));
+  }
+
+  signUp(userData) {
+    console.log('Sending new user data');
+    return this.http.post(this.url + '/user/new', userData).map(data => _.values(data));
   }
 }

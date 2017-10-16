@@ -1,0 +1,41 @@
+<div class="login-component">
+  <div class="card-content">
+    <form (submit)="onLogin" (input)="resetError" class="log-in-form">
+      <label for="name">Name</label><br>
+      <input type="text" name="name" v-model="userName"><br>
+      <p *ngIf="errorsLogin.userName !== undefined" class="card-content__error">{{ errorsLogin.userName }}</p>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" v-model="password"><br>
+      <p *ngIf="errorsLogin.password !== undefined" class="card-content__error">{{ errorsLogin.password }}</p>
+      <button type="submit" class="button-general">To My Notes</button>
+    </form>
+  </div>
+  <div class="card-content" *ngIf="errorApi.length">
+    <div>{{ errorApi }}</div>
+    <div>Please Try Again</div>
+  </div>
+</div>
+
+<div class="sign-up-component">
+  <div class="card-content" *ngIf="show === 'form'">
+    <div (submit)="onSubmit" (input)="resetError" class="sign-up-form">
+      <label for="name">Name</label><br>
+      <input type="text" name="name" v-model="userName"><br>
+      <p *ngIf="errorsSignUp.userName !== undefined" class="card-content__error">{{ errorsSignUp.userName }}</p>
+      <label for="email">Email</label><br>
+      <input type="email" name="email" v-model="email"><br>
+      <p *ngIf="errorsSignUp.email !== undefined" class="card-content__error">{{ errorsSignUp.email }}</p>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" v-model="password"><br>
+      <p *ngIf="errorsSignUp.password !== undefined" class="card-content__error">{{ errorsSignUp.password }}</p>
+      <label for="passwordRepeat">Confirm Passwort</label><br>
+      <input type="password" name="passwordRepeat" v-model="passwordRepeat"><br>
+      <p *ngIf="errorsSignUp.passwordRepeat !== undefined" class="card-content__error">{{ errorsSignUp.passwordRepeat }}</p>
+      <button type="submit" class="button-general">Submit</button>
+    </div>
+  </div>
+  <div class="card-content" *ngIf="show === 'retry'">
+    <div>User could not be created: {{ errorApi }}</div>
+    <button (click)="show = 'form'" class="button-general">Try Again</button>
+  </div>
+</div>
